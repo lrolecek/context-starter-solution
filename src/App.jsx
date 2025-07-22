@@ -1,22 +1,23 @@
 import './App.css'
 
-import { SettingsProvider } from './context/SettingsContext'
+import User from './components/User'
+import Cart from './components/Cart'
+import Products from './components/Products'
 
-import First from './components/First'
-import Second from './components/Second'
+import {CartProvider} from './context/CartContext'
+import {UserProvider} from './context/UserContext'
 
 function App() {
   return (
-    <>
-      <SettingsProvider>
-        <h1>React Context</h1>
+    <UserProvider>
+      <CartProvider>
+        <h1>Context Shop</h1>
 
-
-        <First />
-        <Second />
-
-      </SettingsProvider>
-    </>
+        <User />
+        <Cart />
+        <Products />
+      </CartProvider>
+    </UserProvider>
   )
 }
 
